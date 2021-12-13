@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lotto~</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>로또 번호 추천기</h1>
+    <script>
+        let body = $('body');
+
+        let num = new Set();
+        function randomNum() {
+            return parseInt(Math.random()*45+1);
+        }
+        while(num.size<6) {
+            num.add(randomNum());
+        }
+        let logic =[...num].sort((x,y)=>x-y);
+        logic.forEach(i=>{
+            let div = document.createElement('div');
+            div.setAttribute('class',`ball${logic.indexOf(i)+1} ball`);
+            div.textContent=i;
+            body.append(div);
+        })
+    </script>
+</body>
+</html>
