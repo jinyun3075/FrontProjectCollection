@@ -1,4 +1,4 @@
-# Project_collection-js
+# Project_collection
 ## lotto-recommendation
 [코드보기](recommentation-lotto)
 ![img](result-img/lotto.png)
