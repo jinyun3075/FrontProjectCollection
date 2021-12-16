@@ -21,7 +21,7 @@
 <body class="container">
     <h1>자기소개</h1>
     <textarea class="form-control" onkeydown="counter()" rows="3" id="jasoseol">저는 인성 문제가 없습니다.</textarea>
-    <span id='count'>(0/200)</span>
+    <span id='count'>띄어쓰기 생략 (0/200)</span>
     <script>
         function counter() {
             let content = document.querySelector('#jasoseol').value;
@@ -30,7 +30,7 @@
                 content= content.substring(0,200);
                 document.querySelector('#jasoseol').value=content;
             }
-            document.querySelector('#count').innerHTML = `(${leng}/200)`;
+            document.querySelector('#count').innerHTML = `띄어쓰기 생략 (${leng}/200)`;
         }
         
     </script>
