@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <title>Ministarcraft</title>
+    <style>
+        .background {
+            position: relative;
+            background-image: url('img/background.png');
+            background-size: 500px 330px;
+            width: 500px;
+            height: 330px;
+        }
+        #drone {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            top: 100px;
+            left: 60px;
+        }
+        #bunker {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            top: 80px;
+            right: 20px;
+        }
+        #spit {
+            display: none;
+            position: absolute;
+            top: 140px;
+            left: 150px;
+            width: 50px;
+            height: 30px;
+            z-index: 2;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <h1 id="hp">HP : 3</h1>
+    <div class='background'>
+        <img id='drone' src="img/drone.png" alt="drone">
+        <img id='spit' src="img/spit.png" alt="spit">
+        <img id='bunker' src="img/bunker.png" alt="bunker">
+    </div>
+    <script>
+        let hp = 3;
+        $('#drone').click(()=>{
+            $('#spit').fadeIn();
+            $('#spit').animate({left: '+=220'},500,()=>{
+                $('#spit').fadeOut();
+                $('#hp').text(`HP : ${hp-=1}`);
+                if(hp==0) $('#bunker').fadeOut(1000);
+            });
+            $('#spit').css({left: '150px'});
+        })
+    </script>
+</body>
+</html>
