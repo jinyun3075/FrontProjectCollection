@@ -24,18 +24,46 @@
         <h3>빛이 나는 솔로</h3>
         <h3 id='love'>0일째</h3>
         <input type="text" class="date text-Light align-middle" placeholder="날짜를 입력하시오"></input>
-        <button class="btn btn-primary"></button>
+        <hr/>
     </div>
+        <section class='special-day'>
+            <h3 class='title'>발렌타인 데이</h3>
+            <div class='date-box'>
+                <p id='valentine' class='days-left'>0일 남음</p>
+                <p class='date'>2022.2.14</p>
+            </div>
+        </section>
+        <hr/>
+        <section class='special-day'>
+            <h3 class='title'>100일</h3>
+            <div class='date-box'>
+                <p id='hund' class='days-left'>0일 남음</p>
+                <p id='hund-date' class='date'>0000.00.00</p>
+            </div>
+        </section>
+    <hr/>
     <script>
         let now = new Date();
         $('.date').keydown(()=>{
             let inpday = $('.date').val();
-            console.log(inpday);
             let Dday = new Date(inpday);
-    
+            let valen = new Date('2022-02-14');
             let day = now.getTime()-Dday.getTime();
             let cal = Math.floor(day / (1000*60*60*24)+1);
             $('#love').text(`${cal}일째`);
+            
+            let day2 = valen.getTime()-now.getTime();
+            let cal2 = Math.floor(day2 / (1000*60*60*24)+1);
+            $('#valentine').text(`${cal2}일 남음`);
+
+            let ms = Dday.getTime() + 99 *(1000 * 60 * 60 * 24);
+            let hund = new Date(ms);
+            let hundDate = hund.getFullYear()+'.'+(hund.getMonth()+1)+'.'+hund.getDate();
+            $('#hund-date').text(hundDate);
+
+            let hundResult = hund.getTime()-now.getTime();
+            let cal3 = Math.floor(hundResult / (1000*60*60*24)+1);
+            $('#hund').text(`${cal3}일 남음`);
         })
     </script>
 </body>
