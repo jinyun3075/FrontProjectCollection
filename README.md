@@ -1,6 +1,6 @@
 # Project_collection
 ## lotto-recommendation
-* [코드보기](recommentation-lotto)
+* [코드보기](recommendation-lotto)
 * [미리보기](https://jinyun3075.github.io/front-ProjectCollection/recommendation-lotto)
 ![img](result-img/lotto.png)
 ## word-calculation
