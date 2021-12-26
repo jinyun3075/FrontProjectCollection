@@ -15,4 +15,11 @@
 * [코드보기](date-cal)
 * [미리보기](https://jinyun3075.github.io/JS-ProjectCollection/date-cal)
 ![img](result-img/date.png)
-
+## coolJinTest
+* [코드보기](coolJinTest)
+* [미리보기](https://coolzz.shop/)
+![img](result-img/cool.png)
+## MBTI-TestLayout + ad
+* [코드보기](MBTI테스트)
+* [미리보기](https://jinyun3075.github.io/JS-ProjectCollection/MBTI테스트)
+![img](result-img/mbti.png)
