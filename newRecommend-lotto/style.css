@@ -36,7 +36,6 @@ body {
 .ball {
     width: 80px;
     height: 80px;
-    background: yellow;
     border-radius: 50%;
     display: flex;
     justify-content: center;
@@ -60,16 +59,35 @@ body {
     border-radius: 10px;
     transition: background 0.3s;
 }
+
 .btn:hover {
     background: #ff9900;
 }
 .alert {
     display: none;
-    margin-top: 20px;
-    padding: 15px;
+    margin: 20px 0px;
+    padding: 10px;
     background: #ff4d4d;
     color: white;
     border-radius: 5px;
     font-weight: bold;
-    font-size: 18px;
+}
+
+.ball0 {
+    background: #fbc400;
+}
+.ball1 {
+    background: #69c8f2;
+}
+.ball2 {
+    background: #ff7272;
+}
+.ball3 {
+    background: #aaa;
+}
+.ball4 {
+    background: #b0d840;
+}
+.ball5 {
+    background: #c7c7c7;
 }
