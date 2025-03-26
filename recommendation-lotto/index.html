@@ -13,23 +13,27 @@
 </head>
 <body>
     <h1>로또 번호 추천기</h1>
+    <div id="area"></div>
+    <button onclick="rolling()">추첨</button>
     <script>
-        let body = $('body');
-
-        let num = new Set();
+        function rolling(){
+            $('#area').html('');
+            let body = $('#area');
+            let num = new Set();
+            while(num.size<6) {
+                num.add(randomNum());
+            }
+            let logic =[...num].sort((x,y)=>x-y);
+            logic.forEach(i=>{
+                let div = document.createElement('div');
+                div.setAttribute('class',`ball${logic.indexOf(i)+1} ball`);
+                div.textContent=i;
+                body.append(div);
+            })
+        }
         function randomNum() {
             return parseInt(Math.random()*45+1);
-        }
-        while(num.size<6) {
-            num.add(randomNum());
-        }
-        let logic =[...num].sort((x,y)=>x-y);
-        logic.forEach(i=>{
-            let div = document.createElement('div');
-            div.setAttribute('class',`ball${logic.indexOf(i)+1} ball`);
-            div.textContent=i;
-            body.append(div);
-        })
+        }        
     </script>
 </body>
 </html>
