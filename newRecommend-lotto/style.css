@@ -57,6 +57,16 @@ body {
     background: #ff9900;
 }
 
+.alert {
+    display: none;
+    margin: 20px 0px;
+    padding: 10px;
+    background: #ff4d4d;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
 .ball0 {
     background: #fbc400;
 }

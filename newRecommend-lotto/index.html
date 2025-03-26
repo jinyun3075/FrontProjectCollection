@@ -12,14 +12,14 @@
     <script src="compleList.js"></script>
 </head>
 <body>
-    <!-- <div class="notice-board">
-        <h2>안내 게시판</h2>
-        <p>삼겹살삼겹살삼겹살삼겹살</p>
-        <p>삼겹살삼겹살삼겹살삼겹살삼겹살삼겹살.</p>
-    </div> -->
+    <div class="notice-board">
+        <h2>📢 안내 게시판</h2>
+        <p>🍀🍀🍀🍀</p>
+    </div>
     <div class="container">
-        <h1>로또 번호 뽑기</h1>
+        <h1>히든 로또 뽑기</h1>
         <div class="ball-container" id="balls"></div>
+        <div class="alert" id="alert"></div>
         <button class="btn" id="btn" onclick="drawLotto()">뽑기</button>
         <button class="btn" id="btn2" style="display: none;" onclick="javascript:location.reload();">다시하기</button>
     </div>
@@ -58,7 +58,8 @@
                 time = winingList.length - i;
                 return d == checkList;
             })){
-                alert(`${time}회차 당첨 번호`);
+                $('#alert').show();
+                $('#alert').text(`⚠️ ${time}회차 당첨 번호 ⚠️`);
             }
             $('#btn').hide();
             $('#btn2').show();
