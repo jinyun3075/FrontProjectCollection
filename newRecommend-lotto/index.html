@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로또 뽑기</title>
+    <link rel="stylesheet" href="style.css">
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+    <script src="compleList.js"></script>
+</head>
+<body>
+    <!-- <div class="notice-board">
+        <h2>안내 게시판</h2>
+        <p>삼겹살삼겹살삼겹살삼겹살</p>
+        <p>삼겹살삼겹살삼겹살삼겹살삼겹살삼겹살.</p>
+    </div> -->
+    <div class="container">
+        <h1>로또 번호 뽑기</h1>
+        <div class="ball-container" id="balls"></div>
+        <button class="btn" id="btn" onclick="drawLotto()">뽑기</button>
+        <button class="btn" id="btn2" style="display: none;" onclick="javascript:location.reload();">다시하기</button>
+    </div>
+    <script>
+        let winingList = []
+        window.onload = ()=>{
+            winingList = list.map(d=>d.replaceAll('\t',','));
+        }
+        function drawLotto() {
+            const container = document.getElementById("balls");
+            container.innerHTML = "";
+            let numbers = Array.from({length: 45}, (_, i) => i + 1);
+            let selected = [];
+            
+            while (selected.length < 6) {
+                let index = Math.floor(Math.random() * numbers.length);
+                selected.push(numbers.splice(index, 1)[0]);
+            }
+            
+            selected.sort((a, b) => a - b);
+            
+            let checkList = [];
+            selected.forEach((num, i) => {                
+                const ball = document.createElement("div");
+                ball.className = `ball ball${i}`;
+                ball.textContent = num;
+                checkList.push(num);
+                ball.style.animationDelay = `${i * 0.3}s`;
+                container.appendChild(ball);
+                
+            });
+            checkList = checkList.join(',') 
+
+            let time = 0;    
+            if(winingList.find((d, i)=>{
+                time = winingList.length - i;
+                return d == checkList;
+            })){
+                alert(`${time}회차 당첨 번호`);
+            }
+            // $('#btn').hide();
+            // $('#btn2').show();
+        }
+    </script>
+</body>
+</html>
